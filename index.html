@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rafka's Web</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="nav">
+        <h1>Rafka's Web</h1>
+
+        <!-- Toggle Button (Mobile) -->
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="nav-links" id="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <main class="hero">
+        <h1>Halo, Saya Rafka!</h1>
+        <p>Pelajar yang suka belajar dan membuat proyek kreatif.</p>
+        <a href="#projects" class="btn">Lihat Proyek Saya</a>
+    </main>
+
+    <!-- ===== ABOUT SECTION ===== -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>
+                Saya adalah pelajar yang antusias menjelajahi dunia coding, belajar pelajaran sekolah, dan senang sekali menikmati liburan dengan bermain game serta menonton anime.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Proyek Saya</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Proyek 1</h3>
+                    <p>Deskripsi singkat proyek kamu.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Proyek 2</h3>
+                    <p>Deskripsi singkat proyek kamu.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Proyek 3</h3>
+                    <p>Deskripsi singkat proyek kamu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Kontak</h2>
+            <p>Kamu bisa menghubungi saya melalui email atau media sosial.</p>
+            <p>Email: <a href="mailto:rafkasapari7@gmail.com">rafkasapari7@gmail.com</a></p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/rafkasirajarendang?igsh=YmxvGk1ZW1tZWo0">Instagram</a>
+                <a href="https://wa.me/6283867317467">Whatsapp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <p>&copy; 2026 Rafka. Semua hak dilindungi.</p>
+    </footer>
+
+    <!-- ===== SCRIPT ===== -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('.nav-links a, .hero .btn').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+                navLinks.classList.remove('active'); // tutup menu mobile setelah klik
+            });
+        });
+    </script>
+
+</body>
+</html>
